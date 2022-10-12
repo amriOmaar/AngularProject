@@ -1,0 +1,39 @@
+
+
+<form class="form-group col-md-4" >
+    <input type="text" name="prix" placeholder="Search product.." class="form-control" [(ngModel)]="newPrice" [(ngModel)]="titleProd">
+
+</form>
+
+<br>
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-md-3" *ngFor="let Product of List">
+        <div class="card" style="width: 18rem;" *ngIf="Product.price<=newPrice || newPrice==null || Product.title==titleProd || titleProd==null" >
+            <img src={{Product.image}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{Product.title}}</h5>
+              <p class="card-text">{{Product.description}}</p>
+              <p class="card-text"> Price : {{Product.price}} DT</p>
+              <p class="card-text">{{Product.quantite}} Articles restées</p>
+                <button class="btn btn-info"
+                    (click)="like(Product)">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                            {{Product.nbrLike}}
+                </button>
+                <button class="btn btn-sm btn-warning btnBuy"
+                        (click)="buyProduct(Product)"
+                        [disabled]="Product.quantite==0" >Buy
+                </button>
+
+                <span *ngIf="Product.quantite==0" class="btnBuy">
+                    out of Stock
+                </span>
+
+            </div>
+          </div>
+    </div>
+</div>
