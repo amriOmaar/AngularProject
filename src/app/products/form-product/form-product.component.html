@@ -1,25 +1,49 @@
-<div class="container-fluid px-1 py-5 mx-auto">
-  <div class="row d-flex justify-content-center">
-      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-          <h3>New Product</h3>
-          <div class="card">
-              <h5 class="text-center mb-4">Add a new Product</h5>
-              <form class="form-card" onsubmit="event.preventDefault()">
-                  <div class="row justify-content-between text-left">
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Title<span class="text-danger"> *</span></label> <input type="text" id="fname" name="fname" placeholder="Enter the Title" onblur="validate(1)"> </div>
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">description<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="description" onblur="validate(2)"> </div>
-                  </div>
-                  <div class="row justify-content-between text-left">
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Price<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="Price" onblur="validate(3)"> </div>
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Quantité<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="Quantité" onblur="validate(4)"> </div>
-                  </div>
-                  <form method="post" enctype="multipart/form-data">
-
-                    <label for="apply"><input type="file" name="" id="apply" accept="image/*,.pdf"></label>
-
-                    </form>
-              </form>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v9 by Colorlib</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body class="form-v9">
+	<div class="page-content">
+		<div class="form-v9-content" style="background-image: url('images/form-v9.jpg')">
+			<form class="form-detail" action="#" method="post" #f="ngForm">
+				<h2>Add New Product </h2>
+				<div class="form-row-total">
+          <div class="form-row">
+						<input type="number" name="id" id="id" class="input-text" placeholder="ID" [(ngModel)]="Product.id" #i="ngModel" required pattern="[0-9]+$">
+					</div>
+					<div class="form-row">
+						<input type="text" name="titre" id="titre" class="input-text" placeholder="Title" [(ngModel)]="Product.title" #i="ngModel" required pattern="[0-9]+$">
+					</div>
+          <!-- <div class="alert alert-danger" *ngIf="i.invalid">
+              <!-- <div *ngIf="i.errors.required">id required</div>
+              <div *ngIf="i.errors.pattern">caractére incorrecte</div>
+          </div> -->
+					<div class="form-row">
+						<input type="number" name="price" id="price" class="input-text" placeholder="Price" [(ngModel)]="Product.price"  required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="description" id="description" class="input-text" placeholder="Description" [(ngModel)]="Product.description"  required>
+					</div>
+					<div class="form-row">
+						<input type="number" name="quantite" id="quantite" class="input-text" placeholder="Quantite" [(ngModel)]="Product.quantite"  required>
+					</div>
+				</div>
+        <div class="value">
+          <div class="input-group js-input-file">
+              <input class="input-file" type="file" name="image" id="file" [(ngModel)]="Product.image"  >
           </div>
       </div>
-  </div>
-</div>
+      <button class="register"type="submit" (click)="save()">ADD</button>
+				<!-- <div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Add">
+				</div> -->
+			</form>
+		</div>
+	</div>
+</body>
+</html>

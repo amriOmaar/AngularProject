@@ -1,3 +1,4 @@
+import { User } from './../../core/Model/User';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormUserComponent implements OnInit {
 
+  User : User;
+  ListUsers : User[];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  save(){
+    this.ListUsers.push(this.User);
+    console.log(this.ListUsers);
   }
 
 }

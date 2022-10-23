@@ -9,6 +9,7 @@ export class Product {
     description : String;
     image : String;
     nbrLike : number;
+    category: String;
     quantite : number;
 
 

@@ -1,6 +1,6 @@
 .banner
 {
-    background-image: url('../../assets/img/bg-home1.png');
+    background-image: url('../../../assets/img/bg-homeStore.png');
     height: 600px;
     background-position: center top;
     background-size: cover;
@@ -36,7 +36,7 @@
 
 .stepBox .image1
 {
-    background-image: url('../../assets/img/woman2022.png');
+    background-image: url('../../../assets/img/woman2022.png');
     height: 200px;
     background-position: center top;
     background-size: cover;
@@ -44,7 +44,7 @@
 
 .stepBox .image2
 {
-    background-image: url('../../assets/img/woman2022.png');
+    background-image: url('../../../assets/img/woman2022.png');
     height: 200px;
     background-position: center top;
     background-size: cover;
@@ -52,7 +52,7 @@
 
 .stepBox .image3
 {
-    background-image: url('../../assets/img/woman2022.png');
+    background-image: url('../../../assets/img/woman2022.png');
     height: 200px;
     background-position: center top;
     background-size: cover;

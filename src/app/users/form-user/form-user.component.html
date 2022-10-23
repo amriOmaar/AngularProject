@@ -1,1 +1,52 @@
-<p>form-user works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v9 by Colorlib</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body class="form-v9">
+	<div class="page-content">
+		<div class="form-v9-content" style="background-image: url('images/form-v9.jpg')">
+			<form class="form-detail" action="#" method="post" #f="ngForm">
+				<h2>Add New User </h2>
+				<div class="form-row-total">
+          <div class="form-row">
+						<input type="number" name="id" id="id" class="input-text" placeholder="ID" [(ngModel)]="User.id" #i="ngModel" required pattern="[0-9]+$">
+					</div>
+					<div class="form-row">
+						<input type="text" name="titre" id="titre" class="input-text" placeholder="Title" [(ngModel)]="User.name" #i="ngModel" required pattern="[0-9]+$">
+					</div>
+          <!-- <div class="alert alert-danger" *ngIf="i.invalid">
+              <!-- <div *ngIf="i.errors.required">id required</div>
+              <div *ngIf="i.errors.pattern">caractére incorrecte</div>
+          </div> -->
+					<div class="form-row">
+						<input type="number" name="price" id="price" class="input-text" placeholder="Price" [(ngModel)]="User.job"  required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="description" id="description" class="input-text" placeholder="Description" [(ngModel)]="User.email"  required>
+					</div>
+					<div class="form-row">
+						<input type="number" name="quantite" id="quantite" class="input-text" placeholder="Quantite" [(ngModel)]="User.phone"  required>
+					</div>
+					<div class="form-row">
+						<input type="number" name="quantite" id="quantite" class="input-text" placeholder="Quantite" [(ngModel)]="User.address"  required>
+					</div>
+				</div>
+        <div class="value">
+          <div class="input-group js-input-file">
+              <input class="input-file" type="file" name="image" id="file" [(ngModel)]="User.picture"  >
+          </div>
+      </div>
+      <button class="register"type="submit" (click)="save()">ADD</button>
+				<!-- <div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Add">
+				</div> -->
+			</form>
+		</div>
+	</div>
+</body>
+</html>
