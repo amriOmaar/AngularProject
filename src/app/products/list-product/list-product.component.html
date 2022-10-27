@@ -1,5 +1,10 @@
 
 
+<div class="alert alert-danger" *ngIf="count!=0">
+  {{count}}product out of stock <a routerLink="/product/outofstock">Details</a>
+</div>
+
+
 <form class="form-group col-md-4" >
     <input type="text" name="prix" placeholder="Search product.." class="form-control" [(ngModel)]="newPrice" [(ngModel)]="titleProd">
 

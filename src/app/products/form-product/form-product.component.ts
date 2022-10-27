@@ -1,5 +1,7 @@
+import { ProductService } from './../../core/services/product.service';
   import { Product } from './../../core/Model/Product';
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-product',
@@ -9,18 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class FormProductComponent implements OnInit {
 
   Product : Product;
-  ListProd : Product[];
 
-  constructor() { }
+
+  constructor(private productService: ProductService,
+    private route: Router) { }
 
   ngOnInit(): void {
     this.Product = new Product();
-    this.ListProd = [];
+
   }
 
   save(){
-    this.ListProd.push(this.Product);
-    console.log(this.ListProd);
+    this.productService.all.push(this.Product);
+    this.route.navigate(["product/list"])
+
   }
 
 }

@@ -12,6 +12,8 @@ export class ListUserComponent implements OnInit {
   public List: User[];
   public nomUser : String;
 
+  public User: User;
+
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {
