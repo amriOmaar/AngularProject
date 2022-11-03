@@ -10,21 +10,28 @@ import { Route, Router } from '@angular/router';
 })
 export class FormProductComponent implements OnInit {
 
-  Product : Product;
+  product : Product;
 
 
   constructor(private productService: ProductService,
     private route: Router) { }
 
   ngOnInit(): void {
-    this.Product = new Product();
+    this.product = new Product();
 
   }
 
   save(){
-    this.productService.all.push(this.Product);
+    this.product.nbrLike=0;
+    this.productService.all.push(this.product);
     this.route.navigate(["product/list"])
 
   }
+
+  update(){
+    this.productService.updateProduit(this.product)
+    this.route.navigate(['/product/list'])
+  }
+
 
 }

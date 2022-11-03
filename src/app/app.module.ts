@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ListUserComponent } from './users/list-user/list-user.component';
 
 @NgModule({
   declarations: [

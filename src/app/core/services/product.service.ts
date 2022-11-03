@@ -16,7 +16,7 @@ export class ProductService {
       image : "https://www.cdiscount.com/pdt2/0/3/1/1/700x700/mp55792031/rw/pull-col-roule-homme-automne-et-hiver-manches-long.jpg",
       nbrLike : 20,
       category: 'women',
-      quantite : 10
+      quantite : 0
       },
       {
         id : 6,
@@ -53,8 +53,15 @@ export class ProductService {
 
   constructor() { }
 
+  updateProduit(product: Product){
+    for(let p of this.all){
+      if(p.id===product.id){
+        p=product
+      }
+  }
 
 
+  }
 
 
 }

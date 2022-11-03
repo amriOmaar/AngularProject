@@ -18,7 +18,6 @@ export class FormUserComponent implements OnInit {
 
   save(){
     this.ListUsers.push(this.User);
-    console.log(this.ListUsers);
   }
 
 }

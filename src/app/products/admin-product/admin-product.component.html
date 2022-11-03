@@ -22,9 +22,10 @@
           delete
         </button>
         &nbsp;
-        <button class="btn btn-sm btn-warning">
+        <button class="btn btn-sm btn-warning" [routerLink]="['/product/update',p.id]" (click)="updateProduct(prod)">
           update
         </button>
+
       </td>
     </tr>
   </tbody>

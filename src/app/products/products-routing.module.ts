@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: 'list', component: ListProductComponent },
     { path: 'new', component: FormProductComponent },
     { path: 'category/:category', component: ListProductComponent },
+    { path: 'update/:id', component: FormProductComponent },
     { path: 'outofstock', component: AdminProductComponent }
   ]
    }
